@@ -1,0 +1,19 @@
+# ── Core ───────────────────────────────────────────────────────────
+yt-dlp>=2024.4
+torch==2.2.2
+torchaudio==2.2.2 
+numpy>=2.0,<2.1               # stay on the 2.0 line for now
+scipy
+soundfile
+#uv pip install torch==2.2.2+cu121 torchaudio==2.2.2+cu121 --index-url https://download.pytorch.org/whl/cu121
+
+
+# ── Speech enhancement ─────────────────────────────────────────────
+speechbrain
+
+# ── Optional diarisation ───────────────────────────────────────────
+pyannote.audio>=3.1.1
+# (pyannote pulls torch already, but we pin above for consistency)
+
+# voicefixer>=2.0.1
+
