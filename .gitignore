@@ -1,0 +1,62 @@
+# ─── Python artifacts ────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyd
+*.so
+*.egg-info/
+*.egg
+*.log
+
+# ─── Virtual‑envs (uv, venv, pipenv, poetry) ─────────────────────────
+.venv/
+venv/
+env/
+.uv-cache/
+
+# ─── Distribution / build outputs ────────────────────────────────────
+dist/
+build/
+wheelhouse/
+*.whl
+*.tar.gz
+
+# ─── IDE / editor settings ───────────────────────────────────────────
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# ─── Operating‑system cruft ──────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ─── Jupyter / IPython ───────────────────────────────────────────────
+.ipynb_checkpoints/
+*.ipynb
+
+# ─── Docker / dev‑container artefacts ────────────────────────────────
+.devcontainer/.env
+docker/*.log
+docker-compose.override.yml
+
+# ─── Model + HF cache (optional; keep if you want checkpoints ignored) ─
+.cache/
+*.ckpt
+*.pt
+*.onnx
+
+# ─── Project‑specific outputs ────────────────────────────────────────
+output/
+*.wav
+*.webm
+raw_audio.*
+
+# ─── Secrets / env files ─────────────────────────────────────────────
+.env
+.env.*
+
+# ─── macOS & Windows trash ───────────────────────────────────────────
+*.tmp
+*.swp
+$RECYCLE.BIN/
