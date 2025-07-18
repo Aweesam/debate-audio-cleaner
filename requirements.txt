@@ -1,14 +1,14 @@
-################################################################################
-# Extra index for CUDA 12.1 wheels (works on Win‑GPU + Linux containers)
-################################################################################
---extra-index-url https://download.pytorch.org/whl/cu121
+# ── Core ───────────────────────────────────────────────────────────
+yt-dlp>=2024.4
+torch==2.2.2
+torchaudio==2.2.2 
+numpy>=2.0,<2.1               # stay on the 2.0 line for now
 
-################################################################################
-# Core scientific
-################################################################################
-numpy==1.26.4
-scipy>=1.10
-soundfile>=0.12
+scipy
+soundfile
+# For CUDA builds, install with:
+# uv pip install torch==2.2.2+cu121 torchaudio==2.2.2+cu121 \
+#     --index-url https://download.pytorch.org/whl/cu121
 
 ################################################################################
 # GPU PyTorch 2.2.2  +  CUDA 12.1 wheels

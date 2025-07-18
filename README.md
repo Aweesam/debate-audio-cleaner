@@ -9,6 +9,11 @@ Build the image:
 docker build -t debate-audio-cleaner .
 ```
 
+
+The Dockerfile installs dependencies using `uv` with the `--system` flag so
+that packages are added directly to the container's Python 3.10 environment.
+
+
 Run the cleaner on a YouTube video:
 
 ```bash

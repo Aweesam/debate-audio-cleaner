@@ -18,7 +18,7 @@ WORKDIR /app
 COPY . /app
 
 # Install Python dependencies
-RUN uv pip install --no-cache-dir -r requirements.txt
+RUN uv pip install --system --no-cache-dir -r requirements.txt
 
 # Default command shows CLI help
 CMD ["python", "src/clean_debate_audio.py", "-h"]
