@@ -23,6 +23,7 @@ from pathlib import Path
 
 from debate_audio import DebateAudioPipeline
 from debate_audio.enhancers.metricgan import MetricGANEnhancer
+from debate_audio.enhancers.demucs import DemucsEnhancer
 
 # ─── optional import (only if diarisation is installed) ────────────
 try:
@@ -71,13 +72,18 @@ def main() -> None:
     if not args.no_diar and PyannoteDiarizer is not None:
         diarizer = PyannoteDiarizer(num_speakers=2, device=device)
 
+    # pipe = DebateAudioPipeline(
+    #     enhancer=enhancer,
+    #     diarizer=diarizer,
+    #     work_dir=args.out,
+    # )
     pipe = DebateAudioPipeline(
-        enhancer=enhancer,
-        diarizer=diarizer,
-        work_dir=args.out,
-    )
+    enhancer=DemucsEnhancer(device="cuda"),
+    diarizer=None        # try without first
+)
     try:
-        pipe.clean(args.url, keep_intermediates=args.keep_intermediates)
+        #pipe.clean(args.url, keep_intermediates=args.keep_intermediates)
+        pipe.clean(args.url, keep_intermediates=True)
     except Exception as exc:  # noqa: BLE001
         logging.error("Processing failed: %s", exc)
         sys.exit(1)
